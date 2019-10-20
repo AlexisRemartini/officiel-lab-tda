@@ -2,10 +2,20 @@ package ca.ulaval.glo4002.tda;
 
 import java.util.List;
 
-public interface Entreprise {
+public class Entreprise {
 
-    List<Employe> getEmployes();
+    private SystemePaie systemePaie;
+    private List<Employe> employes;
 
-    SystemePaie getSystemePaie();
+    Entreprise( List<Employe> employes, SystemePaie systemePaie ){
+        this.employes = employes;
+        this.systemePaie = systemePaie;
+    }
 
+    void payerEmployes(){
+        for (Employe employe : employes) {
+            Paie paie = employe.calculerPaieSemaine();
+            systemePaie.payer(paie);
+        }
+    }
 }

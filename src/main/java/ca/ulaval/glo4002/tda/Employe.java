@@ -2,12 +2,11 @@ package ca.ulaval.glo4002.tda;
 
 public interface Employe {
 
-    TypeEmploye getType();
+    //TypeEmploye getType();
+   // double getTauxHoraire();
+    //double getHeuresTravaillees();
+    //double getSalaireAnnuel();
 
-    double getTauxHoraire();
-
-    double getHeuresTravaillees();
-
-    double getSalaireAnnuel();
+    Paie calculerPaieSemaine();
 
 }
